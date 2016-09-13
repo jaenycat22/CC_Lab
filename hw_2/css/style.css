@@ -1,0 +1,16 @@
+
+  div {
+    position: absolute;
+    background-color: #ffffff;
+    left: 0px;
+    top: 300px;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+  }
+  	 h1 {
+		font-size: 5em;
+        color:#FFD8D8;
+        text-align:left;
+
+    }
