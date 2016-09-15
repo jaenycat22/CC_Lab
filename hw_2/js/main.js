@@ -1,4 +1,3 @@
-
 // Start animation to left +300px
 $( "#go" ).click(function() {
   $( ".block" ).animate({ left: "+=900px" }, 5000 );
@@ -19,4 +18,3 @@ $( "cat" ).click(function() {
   $( "p" ).hide( "slow" );
 });
 
- 
