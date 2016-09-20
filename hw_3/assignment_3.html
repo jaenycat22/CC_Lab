@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- Jae kyong Cheong -->
+<!-- Google maps -->
+<!-- Source used from https://developers.google.com/maps/documentation/javascript/style-reference -->
+<html>
+  <head>
+    <title>Map of 5 boroughs</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- style of the map -->
+    <style>
+      html, body {
+        position: relative;
+        float: center;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #b3b3b3;
+       font-family: normal;
+       font-size: 20px;
+       text-align:center;
+      }
+      /* h1 style command */
+   h1 {
+    font-size: 40px;
+        color:#ffffff;
+        text-align:center;
+
+    }
+/* div displaying style command */
+    div {
+        float:center;
+    }
+      #map {
+        margin-left: 200px;
+        position: fixed;
+        float: center;
+        height: 65%;
+        width: 65%;
+      }
+
+      #detail{
+        font-size: 20px;
+        font-family: normal;
+        position: relative;
+        float: center;
+        color:#ffffff;
+
+      }
+
+      red {
+       color:#FF0000;
+
+      }
+
+      green{
+        color:#08FF22;
+      }
+
+      black{
+        color:#000000;
+      }
+
+      blue{
+        color:#0064FF;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Map of Manhattan</h1>
+    <div id="map"></div>
+    <div id="detail">
+      <p>** Natural lanscape: <green>GREEN</green> ** Man made lanscape: <red>RED</red></p>
+      <p>** Parks: <blue>BLUE</blue>  ** Highway road: <black>BLACK</black></p>
+     </div>
+      <script>
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.752749, lng: -73.989808},
+          zoom: 10,
+          styles: [
+            {
+              featureType: 'all',
+              stylers: [
+                { saturation: -80 }
+              ]
+            },{
+              featureType: 'landscape.natural',
+              elementType: 'geometry',
+              stylers: [
+                { color: '#08FF22' },
+              ]
+            },{
+              featureType: 'landscape.man_made',
+              elementType: 'geometry',
+              stylers: [
+                { color: '#FF0000' },
+              ]
+            },{
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [
+                { color: '#000000' },
+              ]
+            },{
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [
+                { color: '#0064FF' },
+              ]
+            }
+
+          ]
+        });
+      }
+    </script>
+    <!-- To load the Google Maps API (my API key included) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBptnCCZgHcd4_nSAZAVyiFCSTObNtLVCE&callback=initMap"
+    async defer></script>
+  </body>
+</html>
