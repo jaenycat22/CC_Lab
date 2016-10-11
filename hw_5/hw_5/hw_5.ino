@@ -1,8 +1,4 @@
-//temperature source 
-//http://www.circuitbasics.com/arduino-thermistor-temperature-sensor-tutorial/ 
 int ledPin = 7;
-
-#include <math.h>
 
 double Thermistor(int RawADC) {
  double Temp;
