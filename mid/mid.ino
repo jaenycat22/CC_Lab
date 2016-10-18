@@ -1,5 +1,6 @@
-int ledPin = 7;
-
+int ledPin1 = 7;
+int ledPin2 = 8;
+int ledPin3 = 9;
 
 double Thermistor(int RawADC) {
  double Temp;
@@ -14,7 +15,8 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(7, OUTPUT);
-
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
 }
 
 void loop() {
@@ -26,9 +28,17 @@ void loop() {
   Serial.print(temp);   
   Serial.println(" F");
   delay(500); 
-  if(temp > 90){ 
-    digitalWrite(7, HIGH);
-    }else{
-     digitalWrite(7,LOW);
+ if(temp > 115 && temp < 212 ){ 
+       digitalWrite(ledPin1, HIGH);
+        digitalWrite(ledPin2, LOW);
+        digitalWrite(ledPin3, LOW);
+    }else if(temp > 100 && temp < 115){
+       digitalWrite(ledPin1, LOW);
+        digitalWrite(ledPin2, HIGH);
+        digitalWrite(ledPin3, LOW);
+     }else if(temp > 0 && temp < 100){
+       digitalWrite(ledPin1, LOW);
+        digitalWrite(ledPin2, LOW);
+        digitalWrite(ledPin3, HIGH);
      }
 }
